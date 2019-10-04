@@ -31,3 +31,8 @@ li {
 .input::placeholder {
   text-align: center;
 }
+
+img {
+  width: 20px;
+  height: 35px;
+}

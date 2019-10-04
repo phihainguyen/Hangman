@@ -13,16 +13,19 @@
         <h1>Hangman</h1>
       </div>
       <div class="word container">
+        <h2>Player 1: Enter a Word</h2>
         <input
           type="text"
           class="input"
           id="word"
+          maxlength="25"
           placeholder="Word to guess"
         />
       </div>
 
       <div class="guessContainer"></div>
-      <div class="userGuess">
+      <div class="userGuess" style="display:none">
+        <h2>Player 2: Guess the Word</h2>
         <input
           class="input"
           id="guessInput"
