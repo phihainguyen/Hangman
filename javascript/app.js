@@ -1,6 +1,7 @@
 let wordInput = document.querySelector("#word");
 let guessWord;
 let guessContainer = document.querySelector(".guessContainer");
+let guessInput = document.querySelector("#guessInput");
 let span;
 
 wordInput.addEventListener("keyup", getWord);
@@ -11,10 +12,17 @@ function getWord(event) {
 
     span = "<ul>";
     for (let i = 0; i < guessWord.length; i++) {
-      span += "<li>" + guessWord[i] + "</li>";
+      span += "<li>" + guessWord[i].toUpperCase() + "</li>";
     }
     span += "<ul>";
 
     guessContainer.innerHTML = span;
+  }
+}
+guessInput.addEventListener("keyup", checkLetter);
+
+function checkLetter(event) {
+  if (event.which === 13) {
+    console.log("you are checking the letter");
   }
 }
