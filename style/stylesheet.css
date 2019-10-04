@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+span {
+  margin: auto;
+}
+.guessContainer {
+  justify-content: space-around;
+}
+ul {
+  list-style-type: none;
+  justify-content: space-around;
+}
+li {
+  display: inline;
+  margin: 20px;
+}
+
+.input {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(226, 183, 43);
+  border-radius: 5px;
+  margin: 10px;
+  height: 50px;
+}
+.input::placeholder {
+  text-align: center;
+}
