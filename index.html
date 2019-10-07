@@ -8,33 +8,42 @@
     <link rel="stylesheet" href="./style/stylesheet.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="title">
-        <h1>Hangman</h1>
-      </div>
-      <div class="word container">
-        <h2 src="./ropeIcon.png">Player 1: Enter a Word</h2>
-        <input
-          type="text"
-          class="input"
-          id="word"
-          maxlength="25"
-          placeholder="Word to guess"
-        />
-      </div>
+    <div class="bodyWrapper">
+      <div class="container">
+        <div class="title">
+          <h1>Hangman</h1>
+        </div>
+        <div class="word container">
+          <h2 src="./ropeIcon.png">Player 1: Enter a Word</h2>
+          <input
+            type="text"
+            class="input"
+            id="word"
+            maxlength="25"
+            placeholder="Word to guess"
+          />
+        </div>
 
-      <div class="guessContainer"></div>
-      <div class="userGuess" style="display:none">
-        <h2>Player 2: Guess the Word</h2>
-        <input
-          class="input"
-          id="guessInput"
-          type="text"
-          maxlength="1"
-          placeholder="type a letter to guess"
-        />
+        <div class="guessContainer"></div>
+        <div class="userGuess" style="display:none">
+          <h2>Player 2: Guess the Word</h2>
+          <input
+            class="input"
+            id="guessInput"
+            type="text"
+            maxlength="1"
+            placeholder="type a letter to guess"
+          />
+          <div class="wrongContainer"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="hangman">
+          <img id="hangmanImg" src="./images/hang6.png" alt="hangman" />
+        </div>
       </div>
     </div>
+
     <script src="./javascript/app.js"></script>
   </body>
 </html>

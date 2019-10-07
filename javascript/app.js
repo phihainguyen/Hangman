@@ -3,7 +3,10 @@ let guessWord;
 let guessContainer = document.querySelector(".guessContainer");
 let guessInput = document.querySelector("#guessInput");
 let images = document.querySelectorAll("img");
+let hangmanImg = document.getElementById("hangmanImg");
 let userGuess = document.querySelector(".userGuess");
+let wrongContainer = document.querySelector(".wrongContainer");
+let hangImg = document.querySelector(".hangman");
 let el;
 let inputVal;
 let rope = "./ropeIcon.png";
@@ -14,6 +17,13 @@ let correctLetter;
 let wrongLetter;
 let counter = 0;
 let maxGuess = 0;
+let img0 = "images/hang0.png";
+let img1 = "images/hang1.png";
+let img2 = "images/hang2.png";
+let img3 = "images/hang3.png";
+let img4 = "images/hang4.png";
+let img5 = "images/hang5.png";
+let img6 = "images/hang6.png";
 
 wordInput.addEventListener("keyup", getWord);
 
@@ -42,21 +52,16 @@ function getWord(event) {
 
     guessContainer.innerHTML = text;
     wordInput.value = "";
+    hangmanImg.src = img0;
   }
 }
 
-guessInput.addEventListener("keyup", checkLetter);
-
-function checkLetter(event) {
-  if (event.which === 13) {
-    console.log("you are checking the letter");
-  }
-}
+guessInput.addEventListener("keyup", checkGuess);
 
 function checkGuess(event) {
   event.preventDefault();
   if (event.which === 13) {
-    console.log(guessInput.value);
+    console.log(guessInput.value.toUpperCase());
     console.log(guessWord);
     inputVal = guessInput.value;
     //   if (guessWord.includes(inputVal)) {
