@@ -4,7 +4,6 @@ let guessContainer = document.querySelector(".guessContainer");
 let guessInput = document.querySelector("#guessInput");
 let images = document.querySelectorAll("img");
 let userGuess = document.querySelector(".userGuess");
-let newEl = document.createElement("span");
 let el;
 let inputVal;
 let rope = "./ropeIcon.png";
@@ -23,7 +22,8 @@ function getWord(event) {
 
     span = "<ul>";
     for (let i = 0; i < guessWord.length; i++) {
-      span += "<li >" + "<img id = " + i + " src = 'ropeIcon.png'>" + "</li>";
+      span +=
+        "<li class = 'liBackground' id =" + i + ">" + guessWord[i] + "</li>";
     }
     span += "<ul>";
 
@@ -56,11 +56,13 @@ function checkGuess(event) {
   //   }
   for (let i = 0; i < guessWord.length; i++) {
     if (inputVal === guessWord[i]) {
-      document
-        .getElementById(i)
-        .parentNode.replaceChild(newEl, document.getElementById(i));
-
-      //   el.parentNode.replaceChild(newEl, el);
+      el = querySelector(i);
+      console.log(el);
+      el.style.background = "none";
     }
   }
+}
+
+function replace(x) {
+  x.parentNode.replaceChild(newEl, x);
 }
