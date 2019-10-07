@@ -38,7 +38,7 @@ function getWord(event) {
     wrongLetter = new Array();
     correctLetter = new Array(guessWord.length);
     correctLetter.fill("");
-
+    console.log(correctLetter);
     text = "<ul>";
     for (let i = 0; i < correctLetter.length; i++) {
       text +=
@@ -61,18 +61,8 @@ guessInput.addEventListener("keyup", checkGuess);
 function checkGuess(event) {
   event.preventDefault();
   if (event.which === 13) {
-    console.log(guessInput.value.toUpperCase());
-    console.log(guessWord);
-    inputVal = guessInput.value;
-    //   if (guessWord.includes(inputVal)) {
-    //     let place = guessWord.indexOf(inputVal);
-    //     console.log(place);
-    //     if (guessWord.indexOf(inputVal) !== -1) {
-    //       console.log(guessWord.indexOf(inputVal, place + 1));
-    //     }
-    //   } else {
-    //     console.log("no match found");
-    //   }
+    guessLetter = guessInput.value.toUpperCase();
+
     for (let i = 0; i < guessWord.length; i++) {
       if (inputVal === guessWord[i]) {
         el = querySelector(i);
