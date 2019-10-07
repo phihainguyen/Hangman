@@ -7,27 +7,41 @@ let userGuess = document.querySelector(".userGuess");
 let el;
 let inputVal;
 let rope = "./ropeIcon.png";
-let span;
+let text;
 let letter;
+let guessLetter;
+let correctLetter;
+let wrongLetter;
+let counter = 0;
+let maxGuess = 0;
 
 wordInput.addEventListener("keyup", getWord);
-guessInput.addEventListener("keyup", checkGuess);
 
 function getWord(event) {
   event.preventDefault();
+
   if (event.which === 13) {
     userGuess.style = "inline";
-    guessWord = wordInput.value;
+    guessWord = wordInput.value.toUpperCase();
     console.log(guessWord);
+    guessInput.focus();
+    wrongLetter = new Array();
+    correctLetter = new Array(guessWord.length);
+    correctLetter.fill("");
 
-    span = "<ul>";
-    for (let i = 0; i < guessWord.length; i++) {
-      span +=
-        "<li class = 'liBackground' id =" + i + ">" + guessWord[i] + "</li>";
+    text = "<ul>";
+    for (let i = 0; i < correctLetter.length; i++) {
+      text +=
+        "<li class = 'liBackground' id =" +
+        i +
+        ">" +
+        correctLetter[i] +
+        "</li>";
     }
-    span += "<ul>";
+    text += "<ul>";
 
-    guessContainer.innerHTML = span;
+    guessContainer.innerHTML = text;
+    wordInput.value = "";
   }
 }
 
@@ -41,24 +55,25 @@ function checkLetter(event) {
 
 function checkGuess(event) {
   event.preventDefault();
-
-  console.log(guessInput.value);
-  console.log(guessWord);
-  inputVal = guessInput.value;
-  //   if (guessWord.includes(inputVal)) {
-  //     let place = guessWord.indexOf(inputVal);
-  //     console.log(place);
-  //     if (guessWord.indexOf(inputVal) !== -1) {
-  //       console.log(guessWord.indexOf(inputVal, place + 1));
-  //     }
-  //   } else {
-  //     console.log("no match found");
-  //   }
-  for (let i = 0; i < guessWord.length; i++) {
-    if (inputVal === guessWord[i]) {
-      el = querySelector(i);
-      console.log(el);
-      el.style.background = "none";
+  if (event.which === 13) {
+    console.log(guessInput.value);
+    console.log(guessWord);
+    inputVal = guessInput.value;
+    //   if (guessWord.includes(inputVal)) {
+    //     let place = guessWord.indexOf(inputVal);
+    //     console.log(place);
+    //     if (guessWord.indexOf(inputVal) !== -1) {
+    //       console.log(guessWord.indexOf(inputVal, place + 1));
+    //     }
+    //   } else {
+    //     console.log("no match found");
+    //   }
+    for (let i = 0; i < guessWord.length; i++) {
+      if (inputVal === guessWord[i]) {
+        el = querySelector(i);
+        console.log(el);
+        el.style.background = "none";
+      }
     }
   }
 }

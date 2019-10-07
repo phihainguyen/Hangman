@@ -37,12 +37,12 @@ img {
   height: 35px;
 }
 .liBackground {
-  background-image: url(../ropeIcon.png);
-  width: 50px;
+  background-image: url(../images/ropeIcon.png);
   background-repeat: no-repeat;
   background-size: contain;
+
   margin: 10px;
-  padding: 8px;
+  padding: 20px;
   /* padding-left: 14px;
   padding-bottom: 28px; */
   border-style: none;
