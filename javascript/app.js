@@ -16,7 +16,7 @@ let guessLetter;
 let correctLetter;
 let wrongLetter;
 let counter = 0;
-let maxGuess = 0;
+let maxGuess;
 let img0 = "images/hang0.png";
 let img1 = "images/hang1.png";
 let img2 = "images/hang2.png";
@@ -37,8 +37,9 @@ function getWord(event) {
     guessInput.focus();
     wrongLetter = new Array();
     correctLetter = new Array(guessWord.length);
+    maxGuess = guessWord.length * 2;
     correctLetter.fill("");
-    console.log(correctLetter);
+    console.log(maxGuess);
     text = "<ul>";
     for (let i = 0; i < correctLetter.length; i++) {
       text +=
@@ -61,8 +62,15 @@ guessInput.addEventListener("keyup", checkGuess);
 function checkGuess(event) {
   event.preventDefault();
   if (event.which === 13) {
-    guessLetter = guessInput.value.toUpperCase();
-
+    if (guessWord) {
+      guessLetter = guessInput.value.toUpperCase();
+      if (counter <= maxGuess) {
+        if (!guessWord.include(guessLetter)) {
+          counter++;
+          wrongLetter.push(guessLetter);
+        }
+      }
+    }
     for (let i = 0; i < guessWord.length; i++) {
       if (inputVal === guessWord[i]) {
         el = querySelector(i);
