@@ -99,6 +99,8 @@ function checkGuess(event) {
               letterUpdate[i].style.borderColor = "black";
               letterUpdate[i].style.borderWidth = "2px";
               letterUpdate[i].style.borderRadius = "15px";
+              letterUpdate[i].style.padding = "20px";
+              letterUpdate[i].style.marginBottom = "10px";
             }
           }
           if (!correctLetter.includes("")) {

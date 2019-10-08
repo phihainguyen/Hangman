@@ -24,14 +24,22 @@ li {
   border-width: 1px;
   border-color: rgb(226, 183, 43);
   border-radius: 5px;
-  margin: 10px;
+  margin: 40px;
   height: 50px;
   width: 300px;
 }
 .input::placeholder {
   text-align: center;
 }
-
+.wrongContainer {
+  margin: 20px;
+}
+h2 {
+  margin: 10px;
+}
+.userGuess {
+  margin: 10px;
+}
 img {
   width: 20px;
   height: 35px;
@@ -41,12 +49,12 @@ img {
   background-repeat: no-repeat;
   background-size: contain;
 
-  margin: 10px;
-  padding: 20px;
+  margin: 30px;
+  padding: 30px;
   /* padding-left: 14px;
   padding-bottom: 28px; */
   border-style: none;
-  font-size: 40px;
+  font-size: 30px;
 }
 li {
   border-width: 2px;
