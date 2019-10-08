@@ -14,7 +14,7 @@
           <h1>Hangman</h1>
         </div>
         <div class="word container">
-          <h2 src="./ropeIcon.png">Player 1: Enter a Word</h2>
+          <h2>Player 1: Enter a Word to Start the Game</h2>
           <input
             type="text"
             class="input"
@@ -25,6 +25,9 @@
         </div>
 
         <div class="guessContainer"></div>
+        <div class="win" style="display: none">
+          <h2>YOU WIN!</h2>
+        </div>
         <div class="userGuess" style="display:none">
           <h2>Player 2: Guess the Word</h2>
           <input
@@ -34,7 +37,14 @@
             maxlength="1"
             placeholder="type a letter to guess"
           />
-          <div class="wrongContainer"></div>
+          <div class="wrongContainer" style="display: none">
+            <h2>Your Wrong Guesses:</h2>
+            <div class="wrongContainer"></div>
+          </div>
+        </div>
+        <div class="lose" style="display: none">
+          <h2>YOU LOSE</h2>
+          <div id="displayWrong"></div>
         </div>
       </div>
       <div class="container">
