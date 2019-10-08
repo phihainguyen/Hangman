@@ -69,15 +69,14 @@ guessInput.addEventListener("keyup", checkGuess);
 
 function checkGuess(event) {
   event.preventDefault();
-  if (event.which === 13) {
-    if (guessWord) {
-      guessLetter = guessInput.value.toUpperCase();
+  if (guessWord) {
+    guessLetter = guessInput.value.toUpperCase();
+    if (event.which === 13) {
       if (counter <= maxGuess) {
         if (!guessWord.includes(guessLetter)) {
           counter++;
           wrongLetter.push(guessLetter);
           hangman(counter);
-
           wrongText = "<div class = 'wrongWrap'><span>Guesses: </span>";
           for (let i = 0; i < wrongLetter.length; i++) {
             wrongText +=
@@ -85,10 +84,10 @@ function checkGuess(event) {
           }
           wrongText += "</div>";
           displayWrong.innerHTML = wrongText;
-
+          displayWrong.style.display = "inline";
           wrongContainer.style.display = "inline";
 
-          console.log(wrongLetter);
+          console.log(guessWord + " this is guessWords" + guessLetter);
         } else {
           for (let i = 0; i < guessWord.length; i++) {
             if (guessLetter === guessWord[i]) {
